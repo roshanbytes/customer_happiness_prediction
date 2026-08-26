@@ -1,0 +1,11 @@
+name: customer-happiness-prediction
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipykernel
