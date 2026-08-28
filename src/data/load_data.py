@@ -9,10 +9,10 @@ def load_raw_data(path=RAW_DATA_PATH) -> pd.DataFrame:
     expected_cols = [TARGET_COL] + FEATURE_COLS
     missing = set(expected_cols) - set(df.columns)
     if missing:
-        raise ValueError(f'Missing columns: {missing}')
+        raise ValueError(f"Missing columns: {missing}")
 
     if df.isnull().values.any():
-        raise ValueError('Raw data contains missing values.')
+        raise ValueError("Raw data contains missing values.")
 
     return df
 
