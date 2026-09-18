@@ -10,6 +10,7 @@ dependencies:
   - seaborn
   - jupyterlab
   - ipykernel
+  - joblib
   - pip
   - pip:
     - lazypredict

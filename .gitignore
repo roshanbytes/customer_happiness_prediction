@@ -14,3 +14,7 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# Predictions
+predictions/*.csv
+!predictions/.gitkeep
