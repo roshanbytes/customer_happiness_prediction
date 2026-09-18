@@ -4,6 +4,12 @@ SC5jOrQnI5YLe0JJ
 Predicts whether a customer is happy or unhappy based on responses to a
 6-question survey, using the ACME Happiness Survey (2020) dataset.
 
+## Background
+ACME is a logistics and delivery startup making on-demand deliveries to
+customers. As part of a global expansion strategy, they want to
+systematically measure and predict customer happiness so they can act on
+it, rather than relying only on ad hoc feedback.
+
 ## Project overview
 | | |
 |---|---|
@@ -71,7 +77,7 @@ and checks for null values.
 - 16 rows are exact duplicates across every column. It's unclear whether
   these reflect genuinely different respondents who happened to answer
   identically, or accidental duplicate entries, since the dataset has no
-  customer ID to confirm either way. See Known Limitations.
+  customer ID to confirm either way.
 - No cleaning step was needed beyond these checks.
 
 ## Exploratory data analysis
@@ -133,16 +139,8 @@ python -m src.models.predict single --x1 4 --x2 3 --x3 4 --x4 3 --x5 4 --x6 4
 Every value must be an integer from 1 to 5; the script raises an
 error if any value is out of range or a column is missing.
 
-## Known limitations
-- **Small dataset.** 126 rows total. Each test row is worth close to 4
-  percentage points of accuracy.
-- **16 duplicate rows,** as noted in Data Engineering above. It has not yet
-  been confirmed whether a duplicate pair was split across train and test,
-  which would let the model see an answer key during training.
-
 ## Next steps
-- Confirm whether any duplicate-row pair crosses the train/test split.
 - Finalize a minimal-feature-subset recommendation (the project's bonus
-  goal) - which questions matter most for predicting happiness, and whether
+  goal): which questions matter most for predicting happiness, and whether
   any question could be dropped from a future survey, using the feature
   importance results already generated in `evaluate.py`.
